@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Hero.hpp"
-#include "Skill.hpp"
+#include "Hero.h"
+#include "Skill.h"
 
 class Subject
 {

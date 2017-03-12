@@ -18,27 +18,45 @@
     <ClCompile Include="demo.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Master.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Hero.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Skill.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Subject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Request.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="description.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Hero.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Skill.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Master.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="IExtraDamage.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Subject.hpp">
+    <ClInclude Include="Common.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Common.h">
+    <ClInclude Include="Master.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Skill.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Subject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Hero.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Request.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
