@@ -117,6 +117,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Common.cpp" />
     <ClCompile Include="demo.cpp" />
     <ClCompile Include="Hero.cpp" />
     <ClCompile Include="Master.cpp" />
@@ -128,6 +129,7 @@
     <Text Include="description.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Common.h" />
     <ClInclude Include="Hero.h" />
     <ClInclude Include="IExtraDamage.h" />
     <ClInclude Include="Master.h" />

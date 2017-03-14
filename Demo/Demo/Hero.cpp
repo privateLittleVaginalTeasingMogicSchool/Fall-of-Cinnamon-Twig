@@ -1,7 +1,7 @@
 #include "Hero.h"
 #include "Subject.h"
+#include "Common.h"
 #include <future>
-#include <iostream>
 
 Hero::Hero()
 {
@@ -10,13 +10,17 @@ Hero::Hero()
 
 void Hero::OnAttackRequestSent()
 {
-	std::cout << "Attack Request Received. -- by Master" << std::endl;
+	_Get_Output_Mutex
+	std::cout << "Attack Request Received. -- by Master." << std::endl;
+	_Release_Output_Mutex
 }
 
 void Hero::OnAttackPerformed(Hero & dst, const BattleResult& result)
 {
-	std::cout << "Attack Performed. -- by opposite side." <<
-		"HP Decreased: " << result.HPDecreased << std::endl;
+	_Get_Output_Mutex
+	std::cout << "Attack Performed. " <<
+		"HP Decreased: " << result.HPDecreased << " -- by opposite side."<< std::endl;
+	_Release_Output_Mutex
 }
 
 void Hero::SendResponse(Hero & src, BattleResult&& result)
