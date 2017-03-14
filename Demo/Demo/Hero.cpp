@@ -10,17 +10,13 @@ Hero::Hero()
 
 void Hero::OnAttackRequestSent()
 {
-	_Get_Output_Mutex
-	std::cout << "Attack Request Received. -- by Master." << std::endl;
-	_Release_Output_Mutex
+	xcout << "Attack Request Received. -- by Master." << std::endl;
 }
 
 void Hero::OnAttackPerformed(Hero & dst, const BattleResult& result)
 {
-	_Get_Output_Mutex
-	std::cout << "Attack Performed. " <<
+	xcout << "Attack Performed. " <<
 		"HP Decreased: " << result.HPDecreased << " -- by opposite side."<< std::endl;
-	_Release_Output_Mutex
 }
 
 void Hero::SendResponse(Hero & src, BattleResult&& result)

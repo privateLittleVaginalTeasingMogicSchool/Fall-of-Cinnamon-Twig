@@ -1,33 +1,29 @@
 #pragma once
 
 #include <iostream>
+#include <sstream>
 #include <fstream>
 #include <string>
+#include <mutex>
 
+/** Thread safe cout class
+* Exemple of use:
+*    xostream{} << "Hello world!" << std::endl;
+*/
 
-class Logger
+class xostream : public std::ostringstream
 {
 public:
-	Logger();
-	~Logger();
-	Logger& operator << (const char* str);
-	Logger& operator << (double num);
-	Logger& operator << (int num);
-	Logger& operator << (char c);
-	Logger& operator<<(Logger& (__cdecl *_Pfn)(Logger&));
-	static Logger& endl(Logger& logger);
-	static Logger& _2point(Logger& logger);
-	static Logger& t(Logger& logger);
+	xostream() = default;
+
+	~xostream()
+	{
+		std::lock_guard<std::mutex> guard(__xcout);
+		std::cout << this->str();
+	}
 
 private:
-	std::ostream _os;
+	static std::mutex __xcout;
 };
 
-typedef Logger xostr;
-extern Logger xcout;
-extern bool output_mutex;
-
-#define _Get_Output_Mutex      while(output_mutex);\
-                               output_mutex = true;
-
-#define _Release_Output_Mutex  output_mutex = false;
+#define xcout xostream{}
