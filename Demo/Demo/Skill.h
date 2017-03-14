@@ -3,11 +3,8 @@
 class Skill
 {
 public:
-
-
+	
+		
 protected:
-	Skill()
-	{
-
-	}
+	Skill();
 };

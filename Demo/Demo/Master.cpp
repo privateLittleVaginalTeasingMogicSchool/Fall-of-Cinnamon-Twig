@@ -3,7 +3,7 @@
 
 Master Master::master;
 
-void Master::AttackRequest(Request && request)
+void Master::Request(AttackRequest && request)
 {
 	if (true)
 	{
@@ -16,3 +16,13 @@ Master::Master()
 
 }
 
+void Master::Work()
+{
+	while (true)
+	{
+		if (__service_queue.size())
+		{
+			//new std::thread(
+		}
+	}
+}

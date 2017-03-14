@@ -1,11 +1,13 @@
+#pragma once
+
 #include "Hero.h"
 #include "Skill.h"
 
 
-class Request
+class AttackRequest
 {
 public:
-	Request(Hero& src, Skill& skill, Hero& dst);
+	AttackRequest(Hero& src, Skill& skill, Hero& dst);
 
 private:
 	Hero* __src;

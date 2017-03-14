@@ -6,16 +6,8 @@
 class Subject
 {
 public:
-	Subject(Hero& src, Skill& skill)
-	{
-		__src = &src;
-		__skill = &skill;
-	}
-
-	void Send()
-	{
-
-	}
+	Subject(Hero& src, Skill& skill);
+	void SendTo(Hero& dst);
 private:
 	Hero* __src;
 	Skill* __skill;

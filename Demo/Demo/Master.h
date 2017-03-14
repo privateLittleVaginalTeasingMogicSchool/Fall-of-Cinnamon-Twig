@@ -2,24 +2,19 @@
 
 #include <queue>
 #include <thread>
-#include "Common.h"
-#include "Request.h"
 
+#include "AttackRequest.h"
 
 
 class Master
 {
 public:
 	static Master master;
-	void AttackRequest(Request&& request);
-
-protected:
-	Master();
-	
-
+	void Request(AttackRequest&& request);
+	void Work();
 
 private:
-	std::queue<Request> __service_queue;
+	Master();
+	std::queue<AttackRequest> __service_queue;
 	std::thread __service_queue_cleaner;
-	std::thread 
 };
