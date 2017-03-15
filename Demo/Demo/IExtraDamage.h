@@ -7,14 +7,14 @@
 class ISpecialEffect
 {
 public:
-	virtual void operator ()() = 0;
+	virtual void operator ()(Hero& dst) = 0;
 };
 
 class IExtraDamage : public ISpecialEffect
 {
 public:
-	virtual void operator ()() override
+	virtual void operator ()(Hero& dst) override
 	{
-
+		
 	}
 };

@@ -26,17 +26,17 @@ private:
 	{
 
 	}
+public:
 
 	virtual int Damage() override
 	{
 		return 20;
 	}
-
-public:
 	static ReinforcedPunching reinforcedpunching;
 };
 
 ReinforcedPunching ReinforcedPunching::reinforcedpunching;
+
 
 class Doge : public Hero
 {
