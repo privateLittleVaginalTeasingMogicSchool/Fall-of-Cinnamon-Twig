@@ -25,3 +25,5 @@ private:
 };
 
 #define xcout xostream{}
+
+// 使用方法：xcout << "Hello World" << std::endl;

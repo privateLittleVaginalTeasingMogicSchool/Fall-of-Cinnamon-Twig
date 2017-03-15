@@ -1,6 +1,7 @@
 #include "Hero.h"
 #include "Master.h"
 #include "IExtraDamage.h"
+#include "Common.h"
 
 class Punching : public Skill
 {
@@ -32,6 +33,7 @@ public:
 	{
 		return 20;
 	}
+
 	static ReinforcedPunching reinforcedpunching;
 };
 
@@ -46,8 +48,24 @@ private:
 		HP = 100;
 	}
 
+	virtual void OnAttackRequestSent() override
+	{// 重载该函数，实现收到Master的响应后的逻辑
+		xcout << "Attack Request Received. -- by Master." << std::endl;
+	}
+
+	virtual void OnAttackPerformed(Hero & dst, const BattleResult& result)
+	{// 重载该函数，实现收到攻击目标响应后的逻辑
+		xcout << "Attack Performed. " <<
+			"HP Decreased: " << result.HPDecreased << " -- by opposite side." << std::endl;
+	}
+
+	virtual void SendResponse(Hero & src, BattleResult&& result)
+	{// 重载该函数，实现受到攻击时的逻辑
+		src.OnAttackPerformed(*this, result);
+	}
+
 	virtual void ApplySkill(Skill& skill) override
-	{
+	{// 重载该函数，实现被Skill攻击时的伤害逻辑
 		HP -= skill.Damage();
 	}
 
@@ -63,6 +81,22 @@ private:
 	Nhr()
 	{
 
+	}
+
+	virtual void OnAttackRequestSent() override
+	{
+		xcout << "Attack Request Received. -- by Master." << std::endl;
+	}
+
+	virtual void OnAttackPerformed(Hero & dst, const BattleResult& result)
+	{
+		xcout << "Attack Performed. " <<
+			"HP Decreased: " << result.HPDecreased << " -- by opposite side." << std::endl;
+	}
+
+	virtual void SendResponse(Hero & src, BattleResult&& result)
+	{
+		src.OnAttackPerformed(*this, result);
 	}
 
 	virtual void ApplySkill(Skill& skill) override
