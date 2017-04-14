@@ -1,6 +1,6 @@
-# KazeshimaAya@gmai.com
+# KazeshimaAya@gmail.com
 # 03.13.2017 UTC
-# A simple relization of idea.
+# A simple realization of idea.
 
 from math import pow as power
 
@@ -22,7 +22,7 @@ class Hero:
         self.Fu = genFu
         self.Name = name
         CA = self.CyberAge
-        self.MaxFanNum = CA*genFu*1000 + CA*genZhi*750 + CA*genChuang*550# Simple growth curve. Linear dependence on CyberAge(hero's level)
+        self.MaxFanNum = CA*genFu*1000 + CA*genZhi*750 + CA*genChuang*550 # Simple growth curve. Linear dependence on CyberAge(hero's level)
         self.BaseAtk = CA*genFu*80 + CA*genZhi*120 + CA*genChuang*200 # unbalanced values. Linear growth
         self.BaseDef = CA*genFu*160 + CA*genZhi*200 + CA*genChuang*100 # unbalanced. Linear
         self.BaseRep = CA*genFu*80 + CA*genZhi*60 + CA*genChuang*160 # unbalanced. Linear
@@ -52,11 +52,11 @@ class Status:
         self.CurrentDef = card.BaseDef
         self.CurrentRep = card.BaseRep
         self.BarNormalization = power(card.Zhi*card.Chuang*card.Fu,1.0/3)
-    
-    def barUpdate(self, card):
+        # About how to determine the sequences of acts. I tried to use half-real-time round mechanism and avoid unbalanced motion bar control
+'''    def barUpdate(self, card):
         if ChuangBar <= MAX_BAR:
             ChuangBar += int(MAX_BAR*card.Chuang/(5.0*BarNormalization))
             if ChuangBar > MAX_BAR:
             ChuangBar = MAX_BAR
-        if ZhiBar <= MAX_BAR:
+        if ZhiBar <= MAX_BAR:'''
             
