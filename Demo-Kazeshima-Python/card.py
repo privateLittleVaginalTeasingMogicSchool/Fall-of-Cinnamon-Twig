@@ -1,4 +1,4 @@
-# KazeshimaAya@gmai.com
+# KazeshimaAya@gmail.com
 # 03.13.2017 UTC
 # A simple relization of idea.
 
